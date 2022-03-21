@@ -7,12 +7,11 @@ class Artist
   @@artists = []
 
   def initialize
-    super
+    @@artists << self
     @songs = []
   end
 
-  extend Memorable::ClassMethods
-  include Memorable::InstanceMethods 
+  extend Memorable
   extend Findable
 
   def self.all
